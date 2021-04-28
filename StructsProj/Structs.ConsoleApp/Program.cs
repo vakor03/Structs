@@ -3,25 +3,19 @@ using Structs.Lib;
 
 namespace Structs.ConsoleApp
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
-            Deque<int>.StartedLength = 20;
-            Deque<int> deque = new Deque<int>();
-            for (int i = 0; i < 100; i++)
-            {
-                deque.AddToStart(i);
-                deque.AddToEnd(i);
-            }
-
-            for (int i = 0; i < 100; i++)
-            {
-                Console.WriteLine(deque.PickFromStart());
-                Console.WriteLine(deque.PickFromEnd());
-            }
-            
-            
+            PriorQueue<int> queue = new PriorQueue<int>();
+            queue.AddElement(12,5);
+            queue.AddElement(13,4);
+            queue.AddElement(15,6);
+            queue.AddElement(13, 5);
+            int priority = 6;
+            Console.WriteLine(queue.GetByPriority(priority) != null
+                ? String.Join(',', queue.GetByPriority(priority))
+                : "No results!");
         }
     }
 }

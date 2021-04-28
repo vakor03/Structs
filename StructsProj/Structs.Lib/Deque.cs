@@ -29,9 +29,9 @@ namespace Structs.Lib
 
         public Deque()
         {
-            _array = new T[10];
-            _startIndex = 5;
-            _lastIndex = 5;
+            _array = new T[_startedLength];
+            _startIndex = _startedLength/2;
+            _lastIndex = _startedLength/2;
         }
 
         public void AddToEnd(T item)
